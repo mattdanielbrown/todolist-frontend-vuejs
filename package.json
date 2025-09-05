@@ -13,7 +13,9 @@
     "prod": "yarn production",
     "production": "cross-env NODE_ENV=production webpack --config build/webpack.prod.js --no-progress --hide-modules",
     "lint": "eslint --ext .js,.vue src build tests",
-    "test": "mocha-webpack --webpack-config build/webpack.dev.js --require tests/setup.js tests/**/*.spec.js"
+    "test": "mocha-webpack --webpack-config build/webpack.dev.js --require tests/setup.js tests/**/*.spec.js",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "@babel/core": "7.9.6",
@@ -45,7 +47,8 @@
     "vue-meta": "2.3.3",
     "vue-router": "3.2.0",
     "vuex": "3.4.0",
-    "webpack-merge": "4.2.2"
+    "webpack-merge": "4.2.2",
+    "@snyk/protect": "latest"
   },
   "browserslist": [
     "> 1%",
@@ -67,7 +70,7 @@
     "expect": "26.0.1",
     "file-loader": "6.0.0",
     "html-webpack-plugin": "4.3.0",
-    "jsdom": "16.2.2",
+    "jsdom": "16.6.0",
     "jsdom-global": "3.0.2",
     "mini-css-extract-plugin": "0.9.0",
     "mocha": "7.2.0",
@@ -84,5 +87,6 @@
     "webpack-cli": "3.3.11",
     "webpack-dev-server": "3.11.0",
     "weekstart": "1.0.1"
-  }
+  },
+  "snyk": true
 }
